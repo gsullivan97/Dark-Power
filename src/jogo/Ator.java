@@ -21,13 +21,15 @@ public class Ator extends Sprite {
     double velocidade = 1;
     int direcao = 3;
     boolean movendo = false;
+    String nome;
     
     public double energia = 1000;
 
     Controle controle = new Controle();
 
-    public Ator(String fileName, int numFrames) {
+    public Ator(String fileName, int numFrames, String name) {
         super(fileName, numFrames);
+        this.nome = name;
     }
     // Controle do caminho percorrível pelo personagem
     public void caminho(Scene cena) {

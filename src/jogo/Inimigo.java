@@ -5,7 +5,13 @@
  */
 package jogo;
 
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.JOptionPane;
+import jplay.Keyboard;
+import jplay.Sprite;
 import jplay.URL;
+import jplay.Window;
 
 /**
  *
@@ -14,9 +20,11 @@ import jplay.URL;
 public class Inimigo extends Ator {
     
     private double ataque = 1;
+    Sprite lutar;
+    Keyboard keyboard;
     
     public Inimigo(int x, int y) {
-        super(URL.sprite("zumbi.png"), 16);
+        super(URL.sprite("zumbi.png"), 16, "Inimigo");
         this.x = x;
         this.y = y;
         this.setTotalDuration(2000);
@@ -72,9 +80,21 @@ public class Inimigo extends Ator {
         }
     }
     
-    public void atacar(Jogador jogador){
+    Font f = new Font("arial", Font.BOLD, 20);
+    
+    public void atacar(Jogador jogador, Window janela){
         if(this.collided(jogador)){
-            Jogador.energia -= this.ataque;
+            //Jogador.energia -= this.ataque;
+            if(!Cenario1.luta)
+                janela.drawText("Aperte enter para atacar", 300, 580, Color.WHITE, f);
+            
+            keyboard = janela.getKeyboard();
+            if (keyboard.keyDown(Keyboard.ENTER_KEY) ){
+                Cenario1.luta = true;
+            }
+            
+        }else{
+            Cenario1.luta = false;
         }
         
         if(Jogador.energia <= 0){

@@ -22,7 +22,7 @@ public class Jogador extends Ator {
     static double energia = 2000;
     
     public Jogador(int x, int y, String nome) {
-        super(URL.sprite(nome + ".png"), 20);
+        super(URL.sprite(nome + ".png"), 20, nome);
         this.x = x;
         this.y = y;
         this.setTotalDuration(2000);
@@ -78,6 +78,7 @@ public class Jogador extends Ator {
     
     public void energia(Window janela){
         janela.drawText("Energia: " + Jogador.energia, 30, 30, Color.green, f);
+        janela.drawText(nome, (int) this.x - nome.length() - 10, (int) this.y - 10, Color.WHITE, f);
     }
     
 }

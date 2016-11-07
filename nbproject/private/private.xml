@@ -5,10 +5,11 @@
         <group>
             <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Game/src/jogo/Jogador.java</file>
             <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Game/src/jogo/Main.java</file>
-            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Game/src/jogo/EscolhePlayer.java</file>
+            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Game/src/jogo/Inimigo.java</file>
             <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Game/src/jogo/Cenario1.java</file>
             <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Game/src/jogo/Menu.java</file>
-            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Game/src/jogo/ControleTiros.java</file>
+            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Game/src/jogo/Ator.java</file>
+            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Game/src/jogo/Lutar.java</file>
         </group>
     </open-files>
 </project-private>

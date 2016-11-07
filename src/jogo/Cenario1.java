@@ -8,6 +8,7 @@ package jogo;
 import javax.swing.JOptionPane;
 import jplay.Keyboard;
 import jplay.Scene;
+import jplay.Sprite;
 import jplay.URL;
 import jplay.Window;
 
@@ -22,6 +23,8 @@ public class Cenario1 {
     private Jogador jogador;
     private Keyboard teclado;
     private Inimigo inimigo;
+    Sprite lutar;
+    static boolean luta = false;
 
     public Cenario1(Window janela, String nome) {
         this.janela = janela;
@@ -53,12 +56,20 @@ public class Cenario1 {
             jogador.atirar(janela, cena, teclado, inimigo);
             inimigo.morrer();
             
-            inimigo.atacar(jogador);
+            inimigo.atacar(jogador, janela);
             
             jogador.energia(janela);
             
             inimigo.x += cena.getXOffset();
             inimigo.y += cena.getYOffset();
+            
+            lutar = new Sprite(URL.sprite("ataque.png"));
+            
+            if(luta){
+                lutar.draw();
+            }else{
+                lutar.stop();
+            }
             
             jogador.draw();
             inimigo.draw();
